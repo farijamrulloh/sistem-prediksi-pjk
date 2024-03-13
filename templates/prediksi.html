@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block konten %}
+
+  <section class="py-0 py-lg-7">
+    <div class="bg-holder" style="background-image:url(/static/assets/img/illustrations/services-bg.png);background-position:center left;background-size:auto; z-index: -1;">
+    </div>
+    <!--/.bg-holder-->
+
+    <div class="bg-holder" style="background-image:url(/static/img/illustrations/dot-2.png);background-position:center right;background-size:auto;margin-left:-180px;margin-top:20px;">
+    </div>
+    <!--/.bg-holder-->
+
+    <div class="container">
+      <div class="text-center">
+        <!-- <h2 class="fw-bold">Our services</h2> -->
+        <h2 class="text-center mb-4">Formulir Prediksi Penyakit Jantung</h2>
+        <hr class="w-25 mx-auto text-dark" style="height:2px;" />
+      </div>
+      <form method="POST" action="/hasil">
+        <div class="mb-3">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" class="form-control" id="age" name="age" required>
+        </div>
+        <div class="mb-3">
+          <label for="sex" class="form-label">Sex</label>
+          <select class="form-select" id="sex" name="sex" required>
+            <option value="" disabled selected>Select Sex</option>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="cp" class="form-label">Chest Pain Type</label>
+          <select class="form-select" id="cp" name="cp" required>
+            <option value="" disabled selected>Select Chest Pain Type</option>
+            <option value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-Anginal Pain</option>
+            <option value="3">Asymptomatic</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="trtbps" class="form-label">Resting Blood Pressure</label>
+          <input type="text" class="form-control" id="trtbps" name="trtbps" required>
+        </div>
+        <div class="mb-3">
+          <label for="chol" class="form-label">Cholesterol</label>
+          <input type="text" class="form-control" id="chol" name="chol" required>
+        </div>
+        <div class="mb-3">
+          <label for="fbs" class="form-label">Fasting Blood Sugar</label>
+          <select class="form-select" id="fbs" name="fbs" required>
+            <option value="" disabled selected>Select Fasting Blood Sugar</option>
+            <option value="1">Greater than 120 mg/dl</option>
+            <option value="0">Less than or equal to 120 mg/dl</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="restecg" class="form-label">Resting Electrocardiographic Results</label>
+          <select class="form-select" id="restecg" name="restecg" required>
+            <option value="" disabled selected>Select Resting ECG Results</option>
+            <option value="0">Normal</option>
+            <option value="1">Abnormal ST-T Wave</option>
+            <option value="2">Left Ventricular Hypertrophy</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="thalachh" class="form-label">Max Heart Rate Achieved</label>
+          <input type="text" class="form-control" id="thalachh" name="thalachh" required>
+        </div>
+        <div class="mb-3">
+          <label for="exng" class="form-label">Exercise Induced Angina</label>
+          <select class="form-select" id="exng" name="exng" required>
+            <option value="" disabled selected>Select Exercise Induced Angina</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="oldpeak" class="form-label">ST Depression Induced by Exercise</label>
+          <input type="text" class="form-control" id="oldpeak" name="oldpeak" required>
+        </div>
+        <div class="mb-3">
+          <label for="slp" class="form-label">Slope of the Peak Exercise ST Segment</label>
+          <select class="form-select" id="slp" name="slp" required>
+            <option value="" disabled selected>Select Slope</option>
+            <option value="0">Upsloping</option>
+            <option value="1">Flat</option>
+            <option value="2">Downsloping</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="caa" class="form-label">Number of Major Vessels Colored by Fluoroscopy</label>
+          <select class="form-select" id="caa" name="caa" required>
+            <option value="" disabled selected>Select Number of Vessels</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="thall" class="form-label">Thalassemia</label>
+          <select class="form-select" id="thall" name="thall" required>
+            <option value="" disabled selected>Select Thalassemia</option>
+            <option value="0">Normal</option>
+            <option value="1">Fixed Defect</option>
+            <option value="2">Reversible Defect</option>
+          </select>
+        </div>
+        <div class="text-center">
+          <input class="btn btn-lg btn-primary rounded-pill hover-top" type="submit" value="Prediksi">
+        </div>
+      </form>
+    </div>
+  </section>
+{% endblock %}

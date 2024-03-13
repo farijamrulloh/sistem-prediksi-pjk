@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block konten %}
+<section class="py-0 py-lg-7">
+<div class="container">
+    <h2 class="text-center">Hasil Prediksi Penyakit Jantung Koroner</h2>
+    {% if prediction == 1 %}
+    <div class="alert alert-danger" role="alert">
+      <strong>Pasien Menderita Lebih Banyak Kemungkinan Serangan Jantung</strong>
+    </div>
+    {% else %}
+    <div class="alert alert-success" role="alert">
+      <strong>Pasien Menderita Lebih Sedikit Kemungkinan Serangan Jantung</strong>
+    </div>
+    {% endif %}
+
+    <h3>Data yang Dimasukkan:</h3>
+    <ul>
+      <li>Usia: {{ age }}</li>
+      <li>Jenis Kelamin: {{ sex }}</li>
+      <li>Tipe Nyeri Dada: {{ cp }}</li>
+      <li>Tekanan Darah dalam Keadaan Istirahat: {{ trtbps }}</li>
+      <li>Kolesterol: {{ chol }}</li>
+      <li>Gula Darah Puasa: {{ fbs }}</li>
+      <li>Hasil Elektrokardiogram Istirahat: {{ restecg }}</li>
+      <li>Achieved Max Heart Rate: {{ thalachh }}</li>
+      <li>Angina yang Dipicu oleh Olahraga: {{ exng }}</li>
+      <li>Depresi ST yang Dipicu oleh Olahraga: {{ oldpeak }}</li>
+      <li>Slope Puncak Segment ST Olahraga: {{ slp }}</li>
+      <li>Jumlah Pembuluh Besar yang Terwarnai oleh Fluoroskopi: {{ caa }}</li>
+      <li>Thalassemia: {{ thall }}</li>
+    </ul>
+
+    <a href="/prediksi" class="btn btn-primary">Prediksi Lagi</a>
+    <a href="/" class="btn btn-secondary">Halaman Utama</a>
+</div>
+</section>
+{% endblock %}
